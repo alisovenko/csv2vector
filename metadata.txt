@@ -14,7 +14,7 @@ tags=csv, vector, shape
 
 homepage=
 tracker=
-repository=
+repository=https://github.com/alisovenko/qgis_plugin_csv2vector
 
 
 experimental=True
