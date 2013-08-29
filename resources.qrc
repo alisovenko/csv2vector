@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/plugins/testplug" >
+     <file>x_office_spreadsheet.png</file>
+  </qresource>
+</RCC>
