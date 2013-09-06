@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>502</height>
+    <width>511</width>
+    <height>406</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>CSV2Vector</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="3" column="0">
@@ -29,16 +29,22 @@
       <bool>false</bool>
      </property>
      <property name="title">
-      <string>Preview (part):</string>
+      <string>The found attributes:</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
        <widget class="QTableWidget" name="tableWidget">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
         </property>
         <property name="baseSize">
          <size>
@@ -48,23 +54,10 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="4" column="0">
     <widget class="QGroupBox" name="groupBox">
      <property name="enabled">
       <bool>false</bool>
@@ -74,30 +67,58 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="1">
-       <widget class="QComboBox" name="attrXCoordComboBox"/>
+       <widget class="QComboBox" name="attrXCoordComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item row="0" column="3">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>Y coordinate:</string>
+         <string>Latitude:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Azimuth:</string>
+         <string>Bearing:</string>
         </property>
        </widget>
       </item>
       <item row="0" column="4">
-       <widget class="QComboBox" name="attrYCoordComboBox"/>
+       <widget class="QComboBox" name="attrYCoordComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item row="1" column="4">
-       <widget class="QComboBox" name="attrDistCoordComboBox"/>
+       <widget class="QComboBox" name="attrDistCoordComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="attrAzCoordComboBox"/>
+       <widget class="QComboBox" name="attrAzCoordComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item row="1" column="3">
        <widget class="QLabel" name="label_6">
@@ -109,22 +130,9 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>X coordinate:</string>
+         <string>Longitude:</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
       <item row="1" column="2">
        <spacer name="horizontalSpacer_2">
@@ -140,7 +148,6 @@
        </spacer>
       </item>
      </layout>
-     <zorder>horizontalLayoutWidget</zorder>
      <zorder>label_4</zorder>
      <zorder>label_5</zorder>
      <zorder>attrYCoordComboBox</zorder>
@@ -149,11 +156,63 @@
      <zorder>attrAzCoordComboBox</zorder>
      <zorder>label_6</zorder>
      <zorder>attrDistCoordComboBox</zorder>
-     <zorder>horizontalSpacer</zorder>
      <zorder>horizontalSpacer_2</zorder>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Delimiter:</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="delimiterSpaceRadioButton">
+        <property name="text">
+         <string>Space</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="delimiterTabRadioButton">
+        <property name="text">
+         <string>Tab</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="delimiterCommaRadioButton">
+        <property name="text">
+         <string>Comma</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QRadioButton" name="delimiterSemicolonRadioButton">
+        <property name="text">
+         <string>Semicolon</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QRadioButton" name="delimiterColonRadioButton">
+        <property name="text">
+         <string>Colon</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="8" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -211,59 +270,6 @@
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="title">
-      <string>Delimiter:</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_5">
-      <item row="2" column="0">
-       <widget class="QRadioButton" name="delimiterSpaceRadioButton">
-        <property name="text">
-         <string>Space</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="delimiterTabRadioButton">
-        <property name="text">
-         <string>Tab</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="delimiterCommaRadioButton">
-        <property name="text">
-         <string>Comma</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="delimiterSemicolonRadioButton">
-        <property name="text">
-         <string>Semicolon</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QRadioButton" name="delimiterColonRadioButton">
-        <property name="text">
-         <string>Colon</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
    </item>
   </layout>
  </widget>

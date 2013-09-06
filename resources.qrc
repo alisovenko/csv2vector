@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/plugins/testplug" >
+  <qresource prefix="/plugins/csv2vector" >
      <file>x_office_spreadsheet.png</file>
   </qresource>
 </RCC>
